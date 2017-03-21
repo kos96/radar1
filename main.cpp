@@ -4,12 +4,12 @@
 #include <QtCore>
 #include <QtGui>
 #include <io.h>
-
+//new commet
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 using namespace std;
 
-        QFile test("test.dat");
+        QFile test("test.dat");//and this
 
         qDebug() << test.fileName();
 
