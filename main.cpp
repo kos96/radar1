@@ -4,7 +4,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <io.h>
-//new commet
+//new comment
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 using namespace std;
@@ -32,24 +32,24 @@ using namespace std;
         };
         head h;
 
-        const int EndBuf=4;
-        const int BuferSize=1024;
-        int remainder = BuferSize,length=0,offset=0;
-        char bufer[BuferSize];
+        const int уndBuf=4;
+        const int buferSize=1024;
+        int remainder = buferSize,length=0,offset=0;
+        char bufer[buferSize];
 
-        test.read(bufer,BuferSize);
+        test.read(bufer,buferSize);
 
     while(!test.atEnd())
         {
-            if (remainder < EndBuf)
+            if (remainder < endBuf)
             {
                 for(int j=0; j<remainder;j++)
                 {
-                    bufer[j]=bufer[BuferSize-offset+j];
+                    bufer[j]=bufer[buferSize-offset+j];
                 }
-                test.read(&bufer[remainder],BuferSize-remainder);
+                test.read(&bufer[remainder],buferSize-remainder);
                 offset = 0;
-                remainder = BuferSize;
+                remainder = buferSize;
             }
 
 
@@ -59,7 +59,7 @@ using namespace std;
                     h.data[i]=bufer[i+offset];
 
               }
-            remainder=BuferSize-offset;
+            remainder=buferSize-offset;
             length=(h.size+1)*4;
 
             qDebug()<<"\n"<<"Длина сообщения:"<< length ;
@@ -75,9 +75,9 @@ using namespace std;
                 {
                     bufer[j]=bufer[offset+j];
                 }
-                test.read(&bufer[remainder],BuferSize-remainder);
+                test.read(&bufer[remainder],buferSize-remainder);
                 offset = 0;
-                remainder = BuferSize;
+                remainder = buferSize;
             }
             else
             {
