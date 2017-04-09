@@ -1,6 +1,0 @@
-#include "widget.h"
-#include <QApplication>
-#include <iostream>
-
-using namespace std;
-int qmain()
